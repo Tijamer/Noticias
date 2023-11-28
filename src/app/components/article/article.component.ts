@@ -6,12 +6,15 @@ import { Article } from 'src/app/interfaces';
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.scss'],
 })
-export class ArticleComponent  implements OnInit {
+export class ArticleComponent{
 
   @Input() article!: Article;
   @Input()  index!: number
   constructor() { }
 
-  ngOnInit() {}
-
+  onClick(){}
+  
+  openArticle(){
+    window.open( this.article.url, '_blank');
+  }
 }
